@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="description" content="Examples of desoSlide jQuery plugin" />
+        <meta name="author" content="Sylvain, Jaoued" />
+
+        <title>David Wallach Portfolio</title>
+
+        <link rel="icon" href="assets/img/favicon.png">
+		
+		<!-- jQuery library -->
+
+		<!-- desoSlide core -->
+		<script src="http://dlwallach.com/desoslide-master/doc/assets/js/vendor/jquery/jquery.js"></script>
+
+        <link rel="stylesheet" href="assets/css/app/main.css" />
+        <link rel="stylesheet" href="assets/css/app/views/demo.css" />
+
+        <link rel="stylesheet" href="assets/css/vendor/magic/magic.min.css">
+        <link rel="stylesheet" href="assets/css/vendor/animate/animate.min.css">
+
+        <link rel="stylesheet" href="../dist/css/jquery.desoslide.css">
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+		<!-- <link rel="stylesheet" type="text/css" href="assets/css/resume.css"> -->
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/font-awesome-4.7.0\css/font-awesome.min.css">
+		
+		<script type="text/javascript">
+			
+			
+			
+			//pager
+			
+			function goTo(number){
+			   $('ul.pager li:eq('+number+') a').tab('show');
+			   upgradePreNext(number);
+			}
+			
+			function upgradePreNext(number){
+			   if (number>1){
+				   $('ul.pager li:eq(0)').attr("onclick","goTo("+(number-1)+")");
+				   $('ul.pager li:eq(0)').attr("class", "previous");
+			   } else {
+				   $('ul.pager li:eq(0)').attr("class", "disabled");
+			   }
+				if (number<5){
+				   $('ul.pager li:eq(6)').attr("onclick","goTo("+(number+1)+")");
+				   $('ul.pager li:eq(6)').attr("class", "next");
+			   } else {
+				   $('ul.pager li:eq(6)').attr("class", "disabled");
+			   }
+			}
+			
+			
+			//
+			function scrollToTop() {
+            	//window.scrollTo(0, 0);
+				window.scrollTo({top: 0, behavior: 'smooth'});
+        	}
+			
+			$('document').ready(function(){
+				
+				//12-26-22 - popover initialization - for info popover
+				$('[data-toggle="popover"]').popover();
+				
+				//for mobile - scroll to top, using fuction above, for all these matching elements (thumbnails)
+				$('img[src$="sm.png"]').on('click', scrollToTop);
+				
+				
+				/*
+				$('img[src$="sm.png"]').click(function(){	
+					$(this).addClass('btn btn-danger back-to-top"');
+					//$(this).addClass('back-to-top');
+				});
+				*/
+				
+				//12-26-22 - info modals
+				$('#slideshow1').on('imageClick.desoslide', function() {
+					$(this).find('img[alt="Shadows on Field"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#shadowsModalInfo"
+					});
+				});
+
+
+				//show bigger image on click using deoslide function and bootstrap
+				$('#slideshow1').on('imageClick.desoslide', function() {
+					$(this).find('img[alt="Shadows on Field"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#shadowsModal"
+					});
+
+					$(this).find('img[alt="Bridge"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#bridgeModal" 
+					});
+
+					$(this).find('img[alt="Chilies"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#chiliesModal" 
+					});
+
+					$(this).find('img[alt="Dusk"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#duskModal" 
+					});
+
+					$(this).find('img[alt="Sunset No2"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#sunset2Modal" 
+					});
+
+					$(this).find('img[alt="Wedding"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#wedding" 
+					});
+
+					$(this).find('img[alt="Lampost"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#lampost" 
+					});
+
+					$(this).find('img[alt="Vats"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#vats" 
+					});
+					
+					$(this).find('img[alt="Taos"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#taos" 
+					});				
+
+					$(this).find('img[alt="cMoulding2"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#cmoulding2" 
+					});
+					
+					$(this).find('img[alt="Truck"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#truck" 
+					});				
+
+					$(this).find('img[alt="Molly"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#molly" 
+					});				
+
+					$(this).find('img[alt="Golf"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#golf" 
+					});				
+
+					$(this).find('img[alt="Studio Window"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#swindow" 
+					});				
+					$(this).find('img[alt="Kitty"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#kitty" 
+					});								
+					
+				});
+				
+				
+				//pager
+				$('li a').on('click',function(e){
+						goTo((e.target.innerHTML)-0);
+				});
+				
+
+			});//end doc ready
+		
+		</script>
+		
+		
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                    <a class="navbar-brand" href="../">
+                        <span class="brand-deso">wallach</span><span class="brand-slide">Portfolio</span>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">				
+					
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a href="http://dlwallach.com/desoslide-master/doc/demo%202.9.html"><i class="fa fa-picture-o"></i> Home</a>
+                        </li>
+						<li>
+							<a data-toggle="modal" href="art-resume.html" data-target="#resumeModal"><i class="fa fa-book"></i>Resume</a>
+						</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- Introduction section -->
+
+        <!-- Breadcrumb section -->
+        <!-- <section class="section-breadcrumb top_banner">
+            <div class="container">
+
+            </div>
+        </section> -->
+
+        <!-- Demo section -->
+        <section id="section_demo">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Result 1 -->
+                    <article class="col-lg-12 col-md-12 outer_body">
+
+                        <h4 class="page_title">Soft Pastels</h4>
+						
+						<p class="intro_blurb">These paintings were created using soft chalk pastels on a fine grit sand paper, with some having a rough watercolor underpainting wash underneath. Please <a href="mailto:wallachster@gmail.com?subject=Online portfolio comments or questions">contact me</a> with comments or questions,</p>
+                        <div class="row">
+							
+						<!-- begin modal popups for larger images for each picture - using bootstrap modal functionality -->  
+						<!-- Shadow Modal -->
+						  <div class="modal fade" id="shadowsModal" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive" src="assets/img/portfolio/shadows_lg.png" alt=""/>    <!-- Modal content-->
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+
+							</div>
+						  </div>
+							
+						<!-- Bridge Modal -->
+						  <div class="modal fade" id="bridgeModal" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive" src="assets/img/portfolio/bridge_lg.png" alt=""/>    <!-- Modal content-->
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+
+							</div>
+						  </div>	
+
+						<!-- Chilies Modal -->
+						  <div class="modal fade" id="chiliesModal" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive" src="assets/img/portfolio/chilies_lg.png" alt=""/>    <!-- Modal content-->
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+
+							</div>
+						  </div>
+							
+						<!-- dusk Modal -->
+						  <div class="modal fade" id="duskModal" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive"
+							src="assets/img/portfolio/dusk_lg.png" alt=""/>    <!-- Modal content-->
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+
+							</div>
+						  </div>	
+
+						<!-- Sunset No.2 Modal -->
+						  <div class="modal fade" id="sunset2Modal" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive"
+							src="assets/img/portfolio/sunset_no2_lg.png" alt=""/>    <!-- Modal content-->
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+
+							</div>
+						  </div>	
+							
+						<!-- Wedding Modal -->
+						  <div class="modal fade" id="wedding" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive"
+							src="assets/img/portfolio/wedding_lg.png" alt=""/>    <!-- Modal content-->
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+
+							</div>
+						  </div>	
+							
+						<!-- Lampost Modal -->
+						  <div class="modal fade" id="lampost" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive"
+							src="assets/img/portfolio/lampost_lg.png" alt=""/>    <!-- Modal content-->
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+
+							</div>
+						  </div>	
+
+						<!-- Vats Modal -->
+						  <div class="modal fade" id="vats" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive" src="assets/img/portfolio/vats_lg.png" alt=""/>
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+							</div>
+						  </div>
+							
+						<!-- Taos Modal -->
+						  <div class="modal fade" id="taos" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive" src="assets/img/portfolio/taos_lg.png" alt="Taos"/>
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+							</div>
+						  </div>
+
+						<!-- Corner Moulding Modal -->
+						  <div class="modal fade" id="cmoulding2" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive" src="assets/img/portfolio/cmoulding2_lg.png" alt=""/>
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+							</div>
+						  </div>
+
+						<!-- Truck Modal -->
+						  <div class="modal fade" id="truck" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive" src="assets/img/portfolio/truck_lg.png" alt=""/>
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+							</div>
+						  </div>
+
+						<!-- Truck Modal -->
+						  <div class="modal fade" id="molly" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive" src="assets/img/portfolio/molly_lg.png" alt=""/>
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+							</div>
+						  </div>
+
+						<!-- Golf Modal -->
+						  <div class="modal fade" id="golf" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive" src="assets/img/portfolio/golf_lg.png" alt=""/>
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+							</div>
+						  </div>
+
+						<!-- Studio Window Modal -->
+						  <div class="modal fade" id="swindow" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive" src="assets/img/portfolio/swindow_lg.png" alt=""/>
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+							</div>
+						  </div>
+						<!-- Studio Window Modal -->
+						  <div class="modal fade" id="kitty" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive" src="assets/img/portfolio/kitty_lg.png" alt=""/>
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+							</div>
+						  </div>
+							
+							
+						<!-- resume modal -->
+						<div id="resumeModal" class="modal fade"> 
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-body">
+									</div>
+								</div>
+							</div>
+						</div>
+							
+						<div id="slideshow1" class="col-lg-7 col-md-7"></div>
+
+							
+						<!-- pagination menu -->
+							<div id="menu">
+							<ul class="pagination pagination-sm">
+								<li class="active"><a data-toggle="tab" href="#tab1">1</a></li>
+								<li><a data-toggle="tab" href="#tab2">2</a></li>
+							</ul>
+						</div>
+
+							
+							<div id="slideshow_1_thumbs_1" class="col-lg-5 col-md-5 tab-content">
+								<div class="tab-pane active fade in active" id="tab1" role="tabpanel">
+                                <ul class="slideshow1_thumbs desoslide-thumbs-vertical list-inline text-center">
+                                    <li>
+										
+										<!-- 12-26-22 - for info modal -->
+										
+										<a href="assets/img/portfolio/shadows_med.png" data-toggle="modal" data-target="myModalTestForInfo"><i class="fa fa-info-circle"></i></a>
+										 
+                                        <a href="assets/img/portfolio/shadows_med.png">
+    									<img src="assets/img/portfolio/shadows_sm.png" 
+											 alt="Shadows on Field" 
+											 data-desoslide-caption-title="Shadows on Field (14 x 11 inches)">
+                                        </a>
+                                    </li>
+									
+									
+									<li>		
+										<!-- 12-26-22 - for info modal -->
+										<!-- 
+                                        <a href="assets/img/portfolio/shadows_med.png" data-toggle="popover" data-content="Some content inside the popover">
+    									<img src="assets/img/portfolio/shadows_sm.png" 
+											 alt="Shadows on Field" 
+											 data-desoslide-caption-title="Shadows on Field (14 x 11 inches)" data-desoslide-caption-link="#myModalTestForInfo">
+                                        </a>
+										-->
+                                    </li>
+									
+									
+                                    <li>
+                                        <a href="assets/img/portfolio/dusk_med.png">
+                                            <img src="assets/img/portfolio/dusk_sm.png"
+                                                 alt="Dusk"
+                                                 data-desoslide-caption-title="Dusk">
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="assets/img/portfolio/bridge_med.png">
+                                            <img src="assets/img/portfolio/bridge_sm.png"
+                                                 alt="Bridge"
+                                                 data-desoslide-caption-title="Bridge">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="assets/img/portfolio/chilies_med.png">
+                                            <img src="assets/img/portfolio/chilies_sm.png"
+                                                 alt="Chilies"
+                                                 data-desoslide-caption-title="Chilies on the Kitchen Counter">
+                                        </a>
+                                    </li>
+									
+									<li>
+                                        <a href="assets/img/portfolio/sunset_no2_med.png">
+    									<img src="assets/img/portfolio/sunset_no2_sm.png" 
+											 alt="Sunset No2" 
+											 data-desoslide-caption-title="Sunset No.2">
+                                        </a>
+                                    </li>								
+								
+                                    <li>
+                                        <a href="assets/img/portfolio/golf_med.png">
+                                            <img src="assets/img/portfolio/golf_sm.png"
+                                                 alt="Golf"
+                                                 data-desoslide-caption-title="Chilies on the Kitchen Counter">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="assets/img/portfolio/wedding_med.png">
+    									<img src="assets/img/portfolio/wedding_sm.png" 
+											 alt="Wedding" 
+											 data-desoslide-caption-title="Wedding">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="assets/img/portfolio/lampost_med.png">
+    									<img src="assets/img/portfolio/lampost_sm.png" 
+											 alt="Lampost" 
+											 data-desoslide-caption-title="lampost">
+                                        </a>
+                                    </li>
+									
+																		</ul>
+								</div>
+								
+								<div class="tab-pane fade" id="tab2" role="tabpanel">
+                                <ul class="slideshow1_thumbs desoslide-thumbs-vertical list-inline text-center">
+								
+                                    <li>
+                                        <a href="assets/img/portfolio/vats_med.png">
+    									<img src="assets/img/portfolio/vats_sm.png" 
+											 alt="Vats" 
+											 data-desoslide-caption-title="Vats">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="assets/img/portfolio/swindow_med.png">
+    									<img src="assets/img/portfolio/swindow_sm.png" 
+											 alt="Studio Window" 
+											 data-desoslide-caption-title="Vats">
+                                        </a>
+                                    </li>
+									
+                                    <li>
+                                        <a href="assets/img/portfolio/taos_med.png">
+    									<img src="assets/img/portfolio/taos_sm.png" 
+											 alt="Taos" 
+											 data-desoslide-caption-title="North of Taos (14 x 11 inches)">
+                                        </a>
+                                    </li>
+									<li>
+                                        <a href="assets/img/portfolio/cmoulding2_med.png">
+    									<img src="assets/img/portfolio/cmoulding2_sm.png" 
+											 alt="cMoulding2" 
+											 data-desoslide-caption-title="Corner Moulding No.2">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="assets/img/portfolio/truck_med.png">
+    									<img src="assets/img/portfolio/truck_sm.png" 
+											 alt="Truck" 
+											 data-desoslide-caption-title="Truck">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="assets/img/portfolio/molly_med.png">
+    									<img src="assets/img/portfolio/molly_sm.png" 
+											 alt="Molly" 
+											 data-desoslide-caption-title="Molly">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="assets/img/portfolio/kitty_med.png">
+    									<img src="assets/img/portfolio/kitty_sm.png" 
+											 alt="Kitty" 
+											 data-desoslide-caption-title="Molly">
+                                        </a>
+                                    </li>
+
+								</ul>
+							</div>
+								</div>
+						</div>							
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- Footer section -->
+        <footer>
+            <div class="container">
+                <div class="row">
+
+                    
+
+                    <article class="col-lg-12 text-center">
+                        <p>
+                            <a href="demo.html" class="btn btn-danger back-to-top"><i class="fa fa-arrow-up"></i></a>
+                        </p>
+                    </article>
+
+                    <article class="col-lg-12 text-center">
+                        <p>&copy; 2022 David Wallach</p>
+                    </article>
+                </div>
+            </div>
+        </footer>
+
+        <script src="assets/js/vendor/jquery/jquery.js"></script>
+        <script src="assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+        <script src="assets/js/vendor/highlight/highlight.pack.js"></script>
+
+        <script src="../dist/js/jquery.desoslide.min.js"></script>
+        <script src="assets/js/app/demo.js"></script>
+		
+		
+	<div class="modal fade" id="myModalTestForInfo" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+    </body>
+</html>

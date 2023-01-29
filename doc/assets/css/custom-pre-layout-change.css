@@ -1,0 +1,102 @@
+/* CSS Document */
+
+.intro_blurb {
+	padding-top: 5px;
+	margin-bottom: 50px;
+}
+
+.page_title {margin-bottom:0;}
+
+.top_banner {margin-bottom:50px;}
+
+.navbar-default .navbar-brand .brand-slide {
+	color: #3498DB;
+}
+
+.see_large {
+	/*position: absolute;
+	left: 0;
+	bottom: -46px;
+	margin-left: 585px;
+	z-index: 100;
+	display:none;*/
+}
+
+#section_demo #slideshow1 {
+	/*text-align: left;*/
+	text-align: center;
+}
+
+.modal-dialog {
+	max-width: 1200px;
+	width: inherit;
+}
+
+#section_demo .desoslide-thumbs-horizontal img,
+#section_demo .desoslide-thumbs-vertical img {
+	border: 2px solid #22313f;
+	border-radius: 3px;
+	transition: border .25s linear,opacity .25s linear;
+	padding: 2px;
+}
+
+#section_demo .desoslide-thumbs-vertical img {
+	width:75%;
+}
+
+.modal-content {
+	position: relative;
+	background-color: #fff;
+	border: 1px solid #999;
+	border: 1px solid rgba(0,0,0,.2);
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	-webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+	box-shadow: 0 3px 9px rgba(0,0,0,.5);
+	outline: 0;
+}
+
+.modal-backdrop.in {
+    opacity: 0.9!important;
+}
+
+.modal-dialog.resume {max-width:990px!important;
+}
+
+.col-lg-1.col-md-1 {
+	padding-left:0;
+	padding-right:0;	
+}
+
+#section_demo #slideshow_1_thumbs_3 {
+	text-align: center;
+}
+
+#section_demo {
+	background-color: white;
+	padding-top: 50px;
+}
+
+footer {	
+	border-top:9px solid #344b60;
+}
+
+.top_banner {
+	margin-bottom: 0;
+}
+
+body {
+	background-color: #22313f;
+}
+
+#section_demo > .container {
+	padding-top:30px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.navbar-default {
+	border-bottom: 7px solid #344b60;
+}

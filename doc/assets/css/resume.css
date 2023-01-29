@@ -1,0 +1,138 @@
+/* Resume CSS Document */
+
+#resumeModal div.modal-content p {/*overwrite styles in custom.css*/
+	float:none;
+	padding-left:0 !important;
+}
+
+.close {
+	font-size: 38px;
+}
+
+a {
+	color: HSL(204.1, 85%, 45%);
+}
+
+.section_title p a:hover,
+.top_outer p a:hover {
+	color:#cc0000;
+}
+
+
+.modal-content {padding:60px;}
+
+.top_outer {
+	border-bottom:1px solid #ccc;
+}
+
+.top_outer > div:first-child {
+	float:left;
+}
+
+.top_outer > div:nth-child(2) {
+	float:right;
+	text-align:right;
+}
+
+.top_outer div:nth-child(2) p {
+	margin-bottom:0;
+	font-size:12px;
+}
+
+h1 {
+	font-size: 42px;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: -3px;
+	color:#222;
+}
+
+.section_title {margin-left: 80px;}
+
+.section_title h2 {
+	font-size: 28px;
+	margin-left: -84px;
+	color: #222
+}
+
+.section_title p {
+	text-indent: -84px;
+	margin-bottom: 8px;
+	font-size: 14px;
+	line-height: 135%;
+}
+
+.section_title p strong,
+.top_outer span {
+	color:#222;
+}
+
+.section_title p span {
+	padding-right:45px;
+}
+
+button.close {
+	position: absolute;
+	right: 56px;
+	margin-top: -50px;
+}
+
+
+
+.section_title p.multiyear span {
+	padding-right:20px;
+}
+
+.section_title.born {
+	padding-top:16px; 
+}
+
+.top_outer p {
+	margin-bottom:12px;
+}
+
+#resumeModal div.modal-content p.key {
+	font-size: .75em;
+}
+
+.contact_info i {
+	font-size: 20px;
+	position: relative;
+	top: 3px;
+	padding-right: 3px;
+}
+
+div.modal-content .top_outer > div:first-child p {
+	font-size:1.25em;
+}
+
+div.modal-content .top_outer > div.contact_info p {
+	font-size:.95em;
+}
+
+
+
+/* Begin Media Queries */
+@media screen and (max-width: 375px) {
+		
+	#resumeModal .modal-content {
+		padding: 22px;
+	}
+	
+	#resumeModal h1 {
+		font-size: 34px;
+	}
+	
+	#resumeModal .section_title h2 {
+		font-size: 24px;
+	}
+	
+	button.close {
+		position: absolute;
+		right: 10px;
+		margin-top: -21px;
+		z-index:10;
+	}
+}
+
+
