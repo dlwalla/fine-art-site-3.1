@@ -193,7 +193,12 @@
 					$(this).find('img[alt="Bullwinkle"]').attr({
 						"data-toggle":"modal", 
 						"data-target":"#bullwinkle" 
-					});								
+					});
+					
+					$(this).find('img[alt="Intersection"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#intersection" 
+					});
 					
 				});
 				
@@ -534,6 +539,18 @@
 							</div>
 						  </div>
 							
+						<!-- Intersection Modal -->
+						  <div class="modal fade" id="intersection" role="dialog">
+							<div class="modal-dialog">
+							<img class="img-responsive" src="assets/img/portfolio/intersection_abq_lg.png" alt=""/>
+							  <div class="modal-content">
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							  </div>
+							</div>
+						  </div>
+							
 						<!-- resume modal -->
 						<div id="resumeModal" class="modal fade"> 
 							<div class="modal-dialog">
@@ -722,6 +739,13 @@
 											 data-desoslide-caption-title="Bullwinkle">
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="assets/img/portfolio/intersection_abq_med.png">
+    									<img src="assets/img/portfolio/intersection_abq_sm.png" 
+											 alt="Intersection" 
+											 data-desoslide-caption-title="Intersection">
+                                        </a>
+                                    </li>																		
 
 								</ul>
 							</div>
