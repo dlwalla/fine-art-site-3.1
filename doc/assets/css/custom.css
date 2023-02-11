@@ -168,7 +168,12 @@ div.modal-content p {/*descriptions*/
 	#section_demo .desoslide-thumbs-vertical img[alt="Truck"],
 	#section_demo .desoslide-thumbs-vertical img[alt="Vats"],
 	#section_demo .desoslide-thumbs-vertical img[alt="Kitty"],
-	#section_demo .desoslide-thumbs-vertical img[alt="Storm Clouds"]{
+	#section_demo .desoslide-thumbs-vertical img[alt="Storm Clouds"],
+	#section_demo .desoslide-thumbs-vertical img[alt="Intersection"],
+	#section_demo .desoslide-thumbs-vertical img[alt="12th"],
+	#section_demo .desoslide-thumbs-vertical img[alt="Road to Taos"],
+	#section_demo .desoslide-thumbs-vertical img[alt="Wall Still Life"],
+	#section_demo .desoslide-thumbs-vertical img[alt="Eloise"]{
 		width: 95%;
 	}
 	
