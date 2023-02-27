@@ -1,0 +1,1 @@
+If popups for large instances doesn't work, use 'http' instead of 'https'. Why, I don't know - need to find out.

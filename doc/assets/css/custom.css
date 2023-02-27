@@ -173,7 +173,12 @@ div.modal-content p {/*descriptions*/
 	#section_demo .desoslide-thumbs-vertical img[alt="12th"],
 	#section_demo .desoslide-thumbs-vertical img[alt="Road to Taos"],
 	#section_demo .desoslide-thumbs-vertical img[alt="Wall Still Life"],
-	#section_demo .desoslide-thumbs-vertical img[alt="Eloise"]{
+	#section_demo .desoslide-thumbs-vertical img[alt="Eloise"],
+	/*#section_demo .desoslide-thumbs-vertical img[alt="Cloud Scene"],*/
+	#section_demo .desoslide-thumbs-vertical img[alt="Abby"],
+	#section_demo .desoslide-thumbs-vertical img[alt="Backdoor Scene No.2"],
+	#section_demo .desoslide-thumbs-vertical img[alt="Moon Picture"]
+	/*#section_demo .desoslide-thumbs-vertical img[alt="Entrance to Studio"]*/{/*larger width for landscape thumbnails only*/
 		width: 95%;
 	}
 	

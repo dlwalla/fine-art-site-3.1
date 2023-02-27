@@ -19,7 +19,9 @@ a {
 }
 
 
-.modal-content {padding:60px;}
+#resumeModal .modal-content {
+	padding:60px;
+}
 
 .top_outer {
 	border-bottom:1px solid #ccc;
@@ -133,6 +135,28 @@ div.modal-content .top_outer > div.contact_info p {
 		margin-top: -21px;
 		z-index:10;
 	}
+	
+	div.modal-content .top_outer > div:first-child p {
+		font-size: 1em !important;
+		margin-bottom: 0px;
+	}
+	
+	div.modal-content p {
+		width: 100%;
+}
+	
+	.top_outer > div:nth-child(2) {
+		float: left!important;
+		text-align: left!important;
+}
+	
+	.contact_info {
+		font-size:.85em;
+		margin-bottom:18px;
+	}
+	
+
+	
 }
 
 
