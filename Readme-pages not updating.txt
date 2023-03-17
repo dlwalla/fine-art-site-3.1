@@ -1,0 +1,1 @@
+Make sure your on the 'dlwallach Host Gator', not the  site 'Fine Art Site V3' when putting files, if experiencing issues with content and pages not updating.

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="description" content="Examples of desoSlide jQuery plugin" />
+        <meta name="author" content="Sylvain, Jaoued" />
+
+        <title>David Wallach Portfolio</title>
+
+        <link rel="icon" href="assets/img/favicon.png">
+		
+		<!-- jQuery library -->
+
+		<!-- desoSlide core -->
+		<script src="http://dlwallach.com/desoslide-master/doc/assets/js/vendor/jquery/jquery.js"></script>
+
+        <link rel="stylesheet" href="assets/css/app/main.css" />
+        <link rel="stylesheet" href="assets/css/app/views/demo.css" />
+
+        <link rel="stylesheet" href="assets/css/vendor/magic/magic.min.css">
+        <link rel="stylesheet" href="assets/css/vendor/animate/animate.min.css">
+
+        <link rel="stylesheet" href="../dist/css/jquery.desoslide.css">
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+		<!-- <link rel="stylesheet" type="text/css" href="assets/css/resume.css"> -->
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/font-awesome-4.7.0\css/font-awesome.min.css">
+		
+		<script type="text/javascript">
+			
+			//pager
+			
+			function goTo(number){
+			   $('ul.pager li:eq('+number+') a').tab('show');
+			   upgradePreNext(number);
+			}
+			
+			function upgradePreNext(number){
+			   if (number>1){
+				   $('ul.pager li:eq(0)').attr("onclick","goTo("+(number-1)+")");
+				   $('ul.pager li:eq(0)').attr("class", "previous");
+			   } else {
+				   $('ul.pager li:eq(0)').attr("class", "disabled");
+			   }
+				if (number<5){
+				   $('ul.pager li:eq(6)').attr("onclick","goTo("+(number+1)+")");
+				   $('ul.pager li:eq(6)').attr("class", "next");
+			   } else {
+				   $('ul.pager li:eq(6)').attr("class", "disabled");
+			   }
+			}
+			
+			
+			//
+			function scrollToTop() {
+            	//window.scrollTo(0, 0);
+				window.scrollTo({top: 0, behavior: 'smooth'});
+        	}
+			
+			$('document').ready(function(){
+				
+				//12-26-22 - popover initialization - for info popover
+				$('[data-toggle="popover"]').popover();
+				
+				//for mobile - scroll to top, using fuction above, for all these matching elements (thumbnails)
+				$('img[src$="sm.png"]').on('click', scrollToTop);
+				
+				
+				/*
+				$('img[src$="sm.png"]').click(function(){	
+					$(this).addClass('btn btn-danger back-to-top"');
+					//$(this).addClass('back-to-top');
+				});
+				*/
+				
+				//12-26-22 - info modals
+				$('#slideshow1').on('imageClick.desoslide', function() {
+					$(this).find('img[alt="Shadows on Field"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#shadowsModalInfo"
+					});
+				});
+				
+				
+				//attempt to show info for images
+				$('#slideshow1').on('imageClick.desoslide', function() {
+					$(this).find('img[alt="Shadows on Field"]').attr({
+						"data-toggle":"modal", 
+						"data-target":"#shadowsModal"
+					});
+				});
+
+
+				//show bigger image on click using deoslide function and bootstrap
+				
+				
+				//pager
+				$('li a').on('click',function(e){
+						goTo((e.target.innerHTML)-0);
+				});
+				
+
+			});//end doc ready
+		
+		</script>	
+		
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                    <a class="navbar-brand" href="../">
+                        <span class="brand-deso">wallach</span><span class="brand-slide">Portfolio</span>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">				
+					
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a href="http://dlwallach.com/desoslide-master/doc/pastels-5.0.html"><i class="fa fa-picture-o"></i> Home</a>
+                        </li>
+						<li>
+							<a href="http://dlwallach.com/desoslide-master/doc/pastels-5.0.html"><i class="fa fa-picture-o"></i> Pastels</a>
+						</li>
+						<li>
+							<a href="http://dlwallach.com/desoslide-master/doc/digital-1.0.html"><i class="fa fa-book"></i>Digital</a>
+						</li>
+						<li>
+							<a data-toggle="modal" href="art-resume.html" data-target="#resumeModal"><i class="fa fa-book"></i>Resume</a>
+						</li>
+
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- Introduction section -->
+
+        <!-- Breadcrumb section -->
+        <!-- <section class="section-breadcrumb top_banner">
+            <div class="container">
+
+            </div>
+        </section> -->
+
+        <!-- Demo section -->
+        <section id="section_demo">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Result 1 -->
+                    <article class="col-lg-12 col-md-12 outer_body">
+
+                        <h4 class="page_title">Digital</h4>
+						
+							<p>Content forthcoming - stay tuned</p>
+							<p><a href="https://dlwallach.com/desoslide-master/doc/pastels-5.0.html">Return to Pastels and the main site</a></p>
+                        							
+				</article>
+			</div>
+
+		</div>
+	</section>
+
+
+
+        <!-- Footer section -->
+        <footer>
+            <div class="container">
+                <div class="row">
+
+                    
+
+                    <article class="col-lg-12 text-center">
+                        <p>
+                            <a href="demo.html" class="btn btn-danger back-to-top"><i class="fa fa-arrow-up"></i></a>
+                        </p>
+                    </article>
+
+                    <article class="col-lg-12 text-center">
+                        <p>&copy; 2023 David Wallach</p>
+                    </article>
+                </div>
+            </div>
+        </footer>
+
+        <script src="assets/js/vendor/jquery/jquery.js"></script>
+        <script src="assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+        <script src="assets/js/vendor/highlight/highlight.pack.js"></script>
+
+        <script src="../dist/js/jquery.desoslide.min.js"></script>
+        <script src="assets/js/app/demo.js"></script>
+		
+		
+	<div class="modal fade" id="myModalTestForInfo" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+    </body>
+</html>
