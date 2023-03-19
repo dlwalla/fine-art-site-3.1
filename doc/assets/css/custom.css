@@ -148,7 +148,15 @@ div.modal-content p {/*descriptions*/
 	text-align: right;
 }
 
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+	border-color: transparent!important;
 
+}
 
 
 .pagination-sm > li > a,
@@ -162,6 +170,7 @@ div.modal-content p {/*descriptions*/
     border-radius: 50%;
     display: inline-block;
     margin-right: 7px;
+	color:#ccc;
 }
 
 
